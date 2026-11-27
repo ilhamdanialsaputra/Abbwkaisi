@@ -72,18 +72,17 @@ function installVirtualClock() {
   await page.evaluate(() => document.fonts.ready);
   console.log('Font Google Sans Flex ke-load:', await page.evaluate(() => document.fonts.check('800 40px "Google Sans Flex"')));
 
-  // Video demo (kalau ada). Chromium bawaan Playwright nggak bisa baca H.264, jadi dipakai versi webm.
-  const demo = ['demo.webm', 'demo.mp4'].find(f => fs.existsSync(f));
-  if (demo) {
-    console.log('Pakai video demo:', demo);
-    await page.evaluate(src => new Promise(res => {
-      const v = document.getElementById('demo');
+  // 4 video demo (demo1..demo4). Chromium bawaan Playwright nggak bisa baca H.264, jadi dipakai versi webm.
+  for (let i = 1; i <= 4; i++) {
+    const f = [`demo${i}.webm`, `demo${i}.mp4`].find(x => fs.existsSync(x));
+    if (!f) { console.log(`demo${i} belum ada -> adegan ${i} pakai video sebelumnya/placeholder`); continue; }
+    console.log(`Pakai video adegan ${i}:`, f);
+    await page.evaluate(([idx, src]) => new Promise(res => {
+      const v = document.querySelectorAll('.dv')[idx];
       v.addEventListener('loadeddata', () => res(), { once: true });
       v.addEventListener('error', () => res(), { once: true });
       v.src = src; v.load();
-    }), demo);
-  } else {
-    console.log('demo.mp4 belum ada -> layar HP pakai placeholder');
+    }), [i - 1, f]);
   }
 
   await page.addStyleTag({ content: '#hud{transition:none !important}' });
