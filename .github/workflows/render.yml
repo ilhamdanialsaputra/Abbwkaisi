@@ -1,0 +1,37 @@
+name: Render HTML ke MP4
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil file dari repository
+        uses: actions/checkout@v4
+
+      - name: Siapkan Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Pasang Playwright dan Chromium
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install chromium --with-deps
+
+      - name: Rekam animasi Dinduy di server
+        run: node render.js
+
+      - name: Potong bagian awal dan ubah jadi MP4 murni 60fps
+        run: |
+          RAW_FILE=$(find raw-video -name "*.webm" | head -n 1)
+          OFFSET=$(cat trim_offset.txt)
+          ffmpeg -y -i "$RAW_FILE" -ss "$OFFSET" -t 25 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r 60 -movflags +faststart dinduy-ad.mp4
+
+      - name: Simpan MP4 ke Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dinduy-ad-mp4
+          path: dinduy-ad.mp4
