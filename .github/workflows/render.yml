@@ -1,4 +1,4 @@
-name: Render HTML ke MP4
+name: Render HTML ke MP4 (9:16)
 
 on:
   workflow_dispatch:
@@ -35,10 +35,10 @@ jobs:
           done
 
       - name: Render frame demi frame jadi MP4 60fps
-        run: node render.js
+        run: node render-916.js
 
       - name: Simpan MP4 ke Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dinduy-ad-mp4
-          path: dinduy-ad.mp4
+          name: dinduy-ad-916-mp4
+          path: dinduy-ad-916.mp4
