@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 const W = 1920, H = 1080, FPS = 60;
-const SECONDS = Number(process.env.SECONDS || 25);   // iklan 24.6 dtk + jeda aman
+const SECONDS = Number(process.env.SECONDS || 24);   // iklan 23.4 dtk + jeda aman
 const OUT = process.env.OUT || 'dinduy-ad.mp4';
 const FRAMES = Math.round(SECONDS * FPS);
 
