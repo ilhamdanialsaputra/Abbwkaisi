@@ -6,6 +6,7 @@ on:
 jobs:
   render-video:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Ambil file dari repository
         uses: actions/checkout@v4
@@ -23,14 +24,18 @@ jobs:
           npm install playwright
           npx playwright install chromium --with-deps
 
-      - name: Rekam animasi Dinduy di server
-        run: node render.js
-
-      - name: Potong bagian awal dan ubah jadi MP4 murni 60fps
+      - name: Siapkan video demo (demo1-4.mp4 -> webm, supaya bisa di-seek per frame)
         run: |
-          RAW_FILE=$(find raw-video -name "*.webm" | head -n 1)
-          OFFSET=$(cat trim_offset.txt)
-          ffmpeg -y -i "$RAW_FILE" -ss "$OFFSET" -t 25 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r 60 -movflags +faststart dinduy-ad.mp4
+          for i in 1 2 3 4; do
+            if [ -f "demo$i.mp4" ]; then
+              ffmpeg -y -i "demo$i.mp4" -an -vf "scale=1080:-2" -c:v libvpx -g 1 -crf 8 -b:v 12M "demo$i.webm"
+            else
+              echo "demo$i.mp4 tidak ada, dilewati"
+            fi
+          done
+
+      - name: Render frame demi frame jadi MP4 60fps
+        run: node render.js
 
       - name: Simpan MP4 ke Artifacts
         uses: actions/upload-artifact@v4
