@@ -6,9 +6,9 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-const W = 1920, H = 1080, FPS = 60;
+const W = 1080, H = 1920, FPS = 60;
 const SECONDS = Number(process.env.SECONDS || 24);   // iklan 23.4 dtk + jeda aman
-const OUT = process.env.OUT || 'dinduy-ad.mp4';
+const OUT = process.env.OUT || 'dinduy-ad-916.mp4';
 const FRAMES = Math.round(SECONDS * FPS);
 
 // Dijalankan di dalam halaman SEBELUM script index.html jalan
@@ -68,7 +68,7 @@ function installVirtualClock() {
   page.on('console', m => { if (m.type() === 'error') console.log('[page]', m.text()); });
   await page.addInitScript(installVirtualClock);
 
-  await page.goto('file://' + path.resolve('index.html'), { waitUntil: 'networkidle' });
+  await page.goto('file://' + path.resolve('index-916.html'), { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   console.log('Font Google Sans Flex ke-load:', await page.evaluate(() => document.fonts.check('800 40px "Google Sans Flex"')));
 
