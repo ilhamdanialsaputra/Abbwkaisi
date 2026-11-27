@@ -63,70 +63,9 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
 #play:hover{border-radius:50px;scale:1.05}
 #pr{position:fixed;left:0;bottom:0;height:4px;width:100%;background:#FFC21A;transform:scaleX(0);transform-origin:0 50%;z-index:8}
 
-.ic,i[data-ic]{display:inline-block;width:var(--s,24px);height:var(--s,24px);flex:none}i[data-ic] svg{width:100%;height:100%;fill:currentColor;display:block}
-.ui{--paper:hsl(250,100%,74%);--bg:hsl(250,20%,94%);--sb:hsl(250,60%,98%);--os:hsl(269,70%,6%);--osv:hsl(269,45%,20%);--p:hsl(260,75%,22%);--op:hsl(250,100%,92%);--pc:hsl(260,60%,26%);--opc:hsl(250,100%,90%);--tb:hsl(250,100%,86%);--tb2:hsl(250,100%,91%)}
-.u{position:absolute;left:0;top:0;width:360px;height:800px;transform:scale(1.6667);transform-origin:0 0;font-family:var(--ff);color:var(--os);overflow:hidden}
-.hb{position:absolute;top:34px;width:48px;height:48px;display:grid;place-items:center;color:var(--os)}
-.srch{position:absolute;top:34px;left:76px;right:80px;height:56px;border-radius:28px;background:var(--sb);display:flex;align-items:center;gap:6px;padding-left:12px;font:400 17px var(--ff);color:var(--osv)}
-.cd{position:absolute;border-radius:12px;padding:12px;box-sizing:border-box;overflow:hidden}.cd b{display:block;font:500 17px/1.25 var(--ff);margin-bottom:8px}.cd p{margin:0;font:400 15px/1.4 var(--ff);opacity:.88}
-.fab{position:absolute;right:20px;bottom:24px;height:86px;padding:0 28px;border-radius:30px;background:var(--p);color:var(--opc);display:flex;align-items:center;gap:14px;z-index:5;box-shadow:0 6px 18px rgba(20,8,60,.28)}.fab b{font:900 22px var(--ff)}
-.tbar{position:absolute;top:34px;left:0;right:0;height:56px;display:flex;align-items:center;gap:20px;padding:0 20px;color:var(--os)}
-.ed{position:absolute;top:110px;left:24px;right:24px}
-.ed h1{margin:0;font:600 40px/1.12 var(--ff);font-variation-settings:"ROND" 100;letter-spacing:-.01em;color:var(--os)}
-.ed .bd{margin:26px 0 0;font:400 16px/1.6 var(--ff)}.ed h2{margin:22px 0 8px;font:900 24px/1.2 var(--ff);font-variation-settings:"ROND" 100}.ed h3{margin:20px 0 10px;font:800 20px/1.2 var(--ff);font-variation-settings:"ROND" 100;color:var(--p)}
-.ed ul{margin:0;padding:0 0 0 22px;font:400 15px/1.7 var(--ff)}.ed li::marker{font-size:1.1em}
-.ck{display:flex;align-items:center;gap:12px;font:400 16px/1.2 var(--ff);padding:9px 0}.ck u{width:20px;height:20px;border:2px solid var(--os);border-radius:5px;box-sizing:border-box;display:grid;place-items:center;text-decoration:none}.ck.on u{background:var(--os);color:var(--paper)}.ck s{opacity:.6}
-.ck em{width:2px;height:20px;background:var(--os);margin-left:-8px;animation:cr 1s steps(1) infinite}@keyframes cr{50%{opacity:0}}
-.rv>.ed>*{opacity:0}.sc.on .rv>.ed>*,.sc.on .rv>.ed ul li,.sc.on .rv>.ed .ck{animation:rvin .8s var(--sp,ease) both;animation-delay:calc(var(--i,0)*.12s + .15s)}
-.rv ul{opacity:1!important}.rv ul li{opacity:0}.rv .ck{opacity:0}.rv>.ed>ul{animation:none!important}
-@keyframes rvin{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.vc{margin-top:22px;border-radius:28px;background:var(--tb);padding:14px;position:relative}.vr{display:flex;align-items:center;gap:14px}
-.pb{width:56px;height:56px;border-radius:28px;background:var(--p);display:grid;place-items:center;flex:none}
-.wb{position:relative;height:12px;margin-top:6px;overflow:hidden}.wt{position:absolute;left:0;right:0;top:5px;height:3px;border-radius:2px;background:color-mix(in srgb,var(--tb) 70%,var(--os) 30%);opacity:.5}
-.wa{position:absolute;left:0;top:0;width:0;overflow:hidden}.sc.on .wa{animation:wp 5s linear 2.8s both}@keyframes wp{to{width:100%}}.wv{display:block}
-.tm{display:flex;justify-content:space-between;font:600 13px var(--ff);color:var(--osv);margin-top:4px}
-.bt{margin-top:12px;display:flex;gap:8px}.gb{height:48px;border-radius:24px;padding:0 20px;display:flex;align-items:center;gap:8px;font:700 15px var(--ff);color:var(--os)}.gb b{font-weight:700}
-.bn{position:absolute;left:14px;right:14px;bottom:14px;height:56px;border-radius:20px;background:var(--pc);color:var(--opc);display:flex;align-items:center;gap:10px;padding:0 8px;opacity:0;font:600 15px var(--ff)}
-.ldb{width:36px;height:36px;border-radius:40% 60% 55% 45%;background:var(--opc);animation:bl 1.6s linear infinite}@keyframes bl{to{rotate:360deg}}
-.sc.on .bn{animation:bnn 3.4s ease both .3s}@keyframes bnn{0%{opacity:0;transform:translateY(8px)}10%,85%{opacity:1;transform:none}100%{opacity:0}}
-.sc.on .bt{animation:btn 3.4s both .3s}@keyframes btn{0%{opacity:1}8%,88%{opacity:0}100%{opacity:1}}
-.tx{opacity:0}.sc.on .tx{animation:rvin .9s var(--sp,ease) 3.7s both}
-.pg{position:absolute;left:24px;right:24px;top:110px;height:560px;border-radius:12px;background:#fff;padding:24px 22px;display:flex;flex-direction:column;gap:11px;box-shadow:0 2px 12px rgba(30,10,80,.12)}
-.pg .l{display:block;position:relative;height:8px;border-radius:4px;background:#2b2433;opacity:.55}.hlw{overflow:visible}.hl{position:absolute;left:-3px;right:-3px;top:-4px;bottom:-4px;border-radius:4px;background:#FFE14D;mix-blend-mode:multiply;transform-origin:0 50%;transform:scaleX(0);opacity:.9}
-.sc.on .hl{animation:hh .9s cubic-bezier(.2,0,0,1) .5s forwards}@keyframes hh{to{transform:none}}
-.ink{position:absolute;left:20px;bottom:70px;width:calc(100% - 40px);height:auto}.pen{stroke-dasharray:420;stroke-dashoffset:420}.sc.on .pen{animation:dr 1.6s cubic-bezier(.4,0,.2,1) 1.6s forwards}@keyframes dr{to{stroke-dashoffset:0}}
-.dk{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);height:64px;border-radius:32px;background:var(--tb);padding:0 16px;display:flex;align-items:center;gap:14px;color:var(--os);box-shadow:0 4px 14px rgba(20,8,60,.2)}
-.pp{position:absolute;top:678px;left:50%;transform:translateX(-50%);font:700 14px var(--ff);color:var(--os)}
-.s-home .cA.dr{z-index:6}.sc.on .cA{animation:dA 4s cubic-bezier(.3,0,0,1) .6s both}.sc.on .cC{animation:dC 4s cubic-bezier(.3,0,0,1) .6s both}
-@keyframes dA{0%{transform:none;box-shadow:none}18%{transform:scale(1.06) rotate(-2deg);box-shadow:0 14px 28px rgba(20,8,60,.35)}62%{transform:translateY(178px) scale(1.06) rotate(1.5deg);box-shadow:0 14px 28px rgba(20,8,60,.35)}80%,100%{transform:translateY(178px);box-shadow:none}}
-@keyframes dC{0%,40%{transform:none}70%,100%{transform:translateY(-158px)}}
-.fg{position:absolute;left:96px;top:190px;width:46px;height:46px;margin:-23px;border-radius:50%;background:rgba(40,20,110,.28);border:2px solid rgba(255,255,255,.7);z-index:7;opacity:0}
-.sc.on .fg{animation:fgg 4s cubic-bezier(.3,0,0,1) .6s both}@keyframes fgg{0%{opacity:0;transform:scale(1.4)}12%{opacity:1;transform:none}62%{opacity:1;transform:translateY(178px)}80%{opacity:0;transform:translateY(178px) scale(1.3)}100%{opacity:0}}
-
-@font-face{font-family:"Google Sans Flex";src:url("assets/fonts/google_sans_flex.ttf") format("truetype");font-weight:1 1000;font-stretch:25% 151%}
-.ui,.ui *{font-variation-settings:"wdth" 104,"ROND" 60,"opsz" 16}
-.ui .ed h1{font-weight:700;font-variation-settings:"wdth" 106,"ROND" 100,"opsz" 48}.ui .ed h2,.ui .ed h3{font-variation-settings:"wdth" 100,"ROND" 100,"opsz" 24}
-.sbr{position:absolute;top:0;left:0;right:0;height:26px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font:500 13px var(--ff);color:var(--os);z-index:4}.si{display:flex;gap:5px}.si svg{width:13px;height:13px;fill:var(--os)}
-@property --t{syntax:"<integer>";initial-value:0;inherits:false}
-.mq{position:absolute;right:20px;bottom:24px;width:157px;height:86px;border-radius:30px;background:var(--p);overflow:hidden;z-index:6;box-shadow:0 6px 18px rgba(20,8,60,.28)}
-.pl{position:absolute;right:0;top:0;width:157px;height:100%;display:flex;align-items:center;justify-content:center;gap:14px;color:var(--opc)}.pl b{font:900 22px var(--ff)}
-.rb{position:absolute;left:22px;right:96px;top:0;bottom:0;display:flex;align-items:center;gap:8px;opacity:0}
-.rd{position:relative;width:36px;height:36px;flex:none}.rd i{position:absolute;border-radius:50%;background:#E5484D}.rd i:first-child{inset:1px;animation:halo 1.3s linear infinite}.rd i:last-child{left:11px;top:11px;width:14px;height:14px}
-@keyframes halo{from{transform:scale(.4);opacity:.45}to{transform:scale(1);opacity:0}}
-.tmr{font:900 24px var(--ff);color:var(--opc);min-width:44px;counter-reset:t var(--t)}.tmr:after{content:"0:0" counter(t)}
-.wf{flex:1;display:flex;align-items:center;justify-content:flex-end;gap:3px;height:48px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px);mask-image:linear-gradient(90deg,transparent,#000 56px)}
-.wf b{width:4px;border-radius:2px;background:var(--opc);height:var(--h);flex:none;animation:wb .5s ease-in-out infinite alternate;animation-delay:calc(var(--k)*-.11s)}@keyframes wb{from{height:7px}to{height:var(--h)}}
-.stp{position:absolute;right:14px;top:50%;margin-top:-30px;width:60px;height:60px;border-radius:30px;background:var(--p);display:grid;place-items:center;color:var(--op);transform:scale(0)}
-.qh .cd{will-change:transform}.qV{opacity:0}
-.sc.on .mq{animation:mq 3.3s linear .25s both}.sc.on .pl{animation:mpl 3.3s linear .25s both}.sc.on .rb{animation:mrb 3.3s linear .25s both}.sc.on .tmr{animation:mt 3.3s steps(1,end) .25s both}.sc.on .stp{animation:ms 3.3s linear .25s both}
-@keyframes mq{0%{width:157px;height:86px;border-radius:30px;background:var(--p);animation-timing-function:cubic-bezier(.3,1.15,.4,1)}18%{width:320px;height:80px;border-radius:32px;background:var(--pc)}66%{width:320px;height:80px;border-radius:32px;background:var(--pc);animation-timing-function:cubic-bezier(.4,0,.2,1)}84%,100%{width:157px;height:86px;border-radius:30px;background:var(--p)}}
-@keyframes mpl{0%{opacity:1}6%{opacity:0}72%{opacity:0}84%,100%{opacity:1}}.sc.on .pl i{animation:mro 3.3s linear .25s both}@keyframes mro{0%{rotate:0deg;scale:1}6%{rotate:90deg;scale:.6}72%{rotate:90deg;scale:.6}84%,100%{rotate:0deg;scale:1}}
-@keyframes mrb{0%,8%{opacity:0;transform:translateX(40px)}22%,62%{opacity:1;transform:none}68%,100%{opacity:0}}
-@keyframes mt{0%{--t:0}30%{--t:1}48%{--t:2}}
-@keyframes ms{0%,4%{transform:scale(0)}20%{transform:scale(1.08)}24%,64%{transform:scale(1)}72%,100%{transform:scale(0)}}
-.sc.on .qV{animation:qv .6s var(--sp,ease) 3.1s both}@keyframes qv{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
-.sc.on .qW{animation:rw .7s var(--sp,ease) 3.05s both}.sc.on .qX{animation:rx .7s var(--sp,ease) 3.05s both}.sc.on .qY{animation:rw .7s var(--sp,ease) 3.05s both}.sc.on .qZ{animation:rx .7s var(--sp,ease) 3.05s both}
-@keyframes rw{to{transform:translateX(172px)}}@keyframes rx{to{transform:translate(-172px,64px)}}
+#demo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:0;transition:opacity .6s ease;background:#000}#demo.ok{opacity:1}
+.ph0{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:500 30px/1.5 var(--ff);color:#7d5fd0;padding:60px}.ph0 b{font-weight:800}#demo.ok~.ph0{display:none}
+#pick{cursor:pointer;padding:10px 20px;border-radius:999px;background:#ffffff26;font-size:15px}
 </style></head>
 <body>
 <div id="stage" data-s="1">
@@ -150,55 +89,7 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
  <div class="fs R" data-for="6"><h1 class="k" data-w>Drag it.<br>Drop ^it.^</h1><p>Move anything, anywhere, with just your thumb.</p>
   <div class="ch"><span class="chip" style="--r:-3deg">Any block</span><span class="chip" style="--r:2deg">Thumb-friendly</span><span class="chip" style="--r:-2deg">Intuitive</span></div></div>
 
- <div id="cam"><div id="ph"><div class="fr"><div id="scr"><video id="demo" src="demo.mp4" muted loop playsinline preload="auto"></video><div class="gl"></div>
-  <div class="sc ui" style="--c:hsl(250,100%,74%)"><div class="u s-ed rv" style="background:var(--paper)"><div class="sbr"><span>09.41</span><span class="si"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg><svg viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg><svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></span></div>
-   <div class="tbar"><i data-ic="back" style="--s:24px;"></i><span style="flex:1"></span><i data-ic="bellplus" style="--s:24px;"></i><i data-ic="more" style="--s:24px;"></i></div>
-   <div class="ed">
-    <h1 style="--i:0">Welcome to<br>Dinduy</h1>
-    <p class="bd" style="--i:2">Notes that stay <b>neat</b>, quick, and easy on your thumb.</p>
-    <h2 style="--i:3">Start here</h2>
-    <ul>
-     <li style="--i:4">Tap <b>New</b> to create a note</li>
-     <li style="--i:5">Press and hold a note card to select, delete, or duplicate it</li>
-     <li style="--i:6">Press, hold, and drag a card to put it anywhere you like</li>
-     <li style="--i:7">Swipe the bar above the keyboard to format text</li>
-    </ul>
-    <h3 style="--i:8">To-do list</h3>
-    <div class="ck on" style="--i:9"><u><i data-ic="ok" style="--s:16px;"></i></u><s>Open Dinduy</s></div>
-    <div class="ck" style="--i:10"><u></u>Write your first note</div>
-    <div class="ck" style="--i:11"><u></u>Tap a checkbox<em></em></div>
-   </div></div></div>
-  <div class="sc ui qh" style="--c:hsl(250,20%,94%)"><div class="u" style="background:var(--bg)"><div class="sbr"><span>09.41</span><span class="si"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg><svg viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg><svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></span></div>
-   <div class="hb" style="left:12px"><i data-ic="menu" style="--s:24px;"></i></div><div class="srch"><i data-ic="search" style="--s:24px;color:var(--osv)"></i><span>Search notes</span></div><div class="hb" style="right:12px"><i data-ic="rows" style="--s:24px;"></i></div>
-   <div class="cd qV" style="left:8px;top:118px;width:172px;height:56px;background:hsl(250,100%,74%)"><p>Voice note</p></div>
-   <div class="cd qW" style="left:8px;top:118px;width:172px;height:150px;background:hsl(250,100%,74%)"><b>Welcome to Dinduy</b><p>Notes that stay neat, quick, and easy on your thumb.</p></div>
-   <div class="cd qX" style="left:180px;top:118px;width:172px;height:190px;background:hsl(266,100%,74%)"><b>Dinduy Notes</b><p>Transcript 1<br>Tes, tes, tes, 1, 2, 3. Halo, halo, Bandung.</p></div>
-   <div class="cd qY" style="left:8px;top:276px;width:172px;height:170px;background:hsl(234,100%,74%)"><b>Ghost on danger</b><p>2027 dunia dikejutkan oleh satu hal, yaitu dunia setan benar benar terbuka total.</p></div>
-   <div class="cd qZ" style="left:180px;top:316px;width:172px;height:150px;background:hsl(258,100%,74%)"><b>Start here</b><p>Tap New to create a note. Press and hold a note card to select, delete, or duplicate it.</p></div>
-   <div class="mq"><div class="pl"><i data-ic="plus" style="--s:36px;"></i><b>New</b></div>
-    <div class="rb"><div class="rd"><i></i><i></i></div><span class="tmr"></span><div class="wf"><b style="--h:18px;--k:0"></b><b style="--h:30px;--k:1"></b><b style="--h:12px;--k:2"></b><b style="--h:40px;--k:3"></b><b style="--h:24px;--k:4"></b><b style="--h:34px;--k:5"></b><b style="--h:16px;--k:6"></b><b style="--h:44px;--k:7"></b><b style="--h:22px;--k:8"></b><b style="--h:36px;--k:9"></b><b style="--h:14px;--k:10"></b><b style="--h:28px;--k:11"></b><b style="--h:38px;--k:12"></b><b style="--h:20px;--k:13"></b></div></div>
-    <div class="stp"><i data-ic="stop" style="--s:28px;"></i></div></div>
-  </div></div>
-  <div class="sc ui" style="--c:hsl(250,20%,94%)"><div class="u" style="background:var(--bg)"><div class="sbr"><span>09.41</span><span class="si"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg><svg viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg><svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></span></div>
-   <div class="tbar"><i data-ic="back" style="--s:24px;"></i><span style="flex:1"></span><i data-ic="more" style="--s:24px;"></i></div>
-   <div class="pg"><i class="l" style="width:70%;height:12px;background:var(--os);opacity:.85"></i>
-    <i class="l" style="width:96%"></i><i class="l" style="width:92%"></i><i class="l hlw" style="width:88%"><em class="hl"></em></i><i class="l" style="width:94%"></i><i class="l" style="width:60%"></i>
-    <i class="l" style="width:95%;margin-top:18px"></i><i class="l" style="width:90%"></i><i class="l" style="width:97%"></i><i class="l" style="width:84%"></i><i class="l" style="width:93%"></i><i class="l" style="width:45%"></i>
-    <svg class="ink" viewBox="0 0 280 120"><path class="pen" d="M14 96 C60 70 90 108 130 82 S210 64 262 92" fill="none" stroke="hsl(4,85%,46%)" stroke-width="4" stroke-linecap="round"/></svg></div>
-   <div class="dk"><i data-ic="undo" style="--s:24px;"></i><i data-ic="pen" style="--s:24px;color:var(--op);background:var(--p);border-radius:16px;padding:8px;box-sizing:content-box"></i><i data-ic="mark" style="--s:24px;"></i><i data-ic="ok" style="--s:24px;"></i></div>
-   <div class="pp">Page 1 of 8</div>
-  </div></div>
-  <div class="sc ui s-home" style="--c:hsl(250,20%,94%)"><div class="u" style="background:var(--bg)"><div class="sbr"><span>09.41</span><span class="si"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg><svg viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg><svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg></span></div>
-   <div class="hb" style="left:12px"><i data-ic="menu" style="--s:24px;"></i></div>
-   <div class="srch"><i data-ic="search" style="--s:24px;color:var(--osv)"></i><span>Search notes</span></div>
-   <div class="hb" style="right:12px"><i data-ic="rows" style="--s:24px;"></i></div>
-   <div class="cd cA dr" style="left:8px;top:118px;width:172px;height:150px;background:hsl(250,100%,74%)"><b>Welcome to Dinduy</b><p>Notes that stay neat, quick, and easy on your thumb.</p></div>
-   <div class="cd cB" style="left:180px;top:118px;width:172px;height:190px;background:hsl(266,100%,74%)"><b>Dinduy Notes</b><p>Transcript 1<br>Tes, tes, tes, 1, 2, 3. Halo, halo, Bandung.</p></div>
-   <div class="cd cC" style="left:8px;top:276px;width:172px;height:170px;background:hsl(234,100%,74%)"><b>Ghost on danger</b><p>2027 dunia dikejutkan oleh satu hal, yaitu dunia setan benar benar terbuka total.</p></div>
-   <div class="cd cD" style="left:180px;top:316px;width:172px;height:150px;background:hsl(258,100%,74%)"><b>Start here</b><p>Tap New to create a note. Press and hold a note card to select, delete, or duplicate it.</p></div>
-   <div class="fg"></div>
-   <div class="fab"><i data-ic="plus" style="--s:36px;"></i><b>New</b></div>
-  </div></div>
+ <div id="cam"><div id="ph"><div class="fr"><div id="scr"><video id="demo" src="demo.mp4" muted loop playsinline preload="auto"></video><div class="ph0">Taruh <b>demo.mp4</b><br>di folder yang sama,<br>atau pilih video di layar awal</div><div class="gl"></div>
  </div></div></div></div>
 
  <div id="f" data-for="7"><div class="lg" style="--z:320px"><img src="assets/logo.png" alt="Dinduy" onerror="this.remove()" onload="this.nextElementSibling.remove()"><svg class="fb" viewBox="-100 -100 200 200"></svg></div>
@@ -206,9 +97,8 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
   <div class="k sm" data-w>Notes that stay on your ^phone.^</div>
   <div class="pl"><span>On-device</span><span>No trackers</span><span>Open source</span><span>Android</span></div></div>
 </div>
-<script>const IC={"stop":"M6 6h12v12H6z","menu": "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z", "search": "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z", "rows": "M4 4h16v7H4zM4 13h16v7H4z", "back": "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z", "bellplus": "M10.01 21.01c0 1.1.89 1.99 1.99 1.99s1.99-.89 1.99-1.99h-3.98zm8.87-4.19V11c0-3.25-2.25-5.97-5.29-6.69v-.72C13.59 2.71 12.88 2 12 2s-1.59.71-1.59 1.59v.72C7.37 5.03 5.12 7.75 5.12 11v5.82L3 18.94V20h18v-1.06l-2.12-2.12zM16 13.01h-3v3h-2v-3H8V11h3V8h2v3h3v2.01z", "more": "M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z", "play": "M8 5v14l11-7z", "notes": "M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z", "plus": "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z", "ok": "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z", "pen": "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z", "mark": "M6 14l3 3v5h6v-5l3-3V9H6zm5-12h2v3h-2zM3.5 5.88l1.41-1.41 2.12 2.12L5.62 8zm13.46.71l2.12-2.12 1.41 1.41L18.38 8z", "undo": "M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z", "x": "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"};document.querySelectorAll("i[data-ic]").forEach(e=>{e.innerHTML=`<svg viewBox="0 0 24 24"><path d="${IC[e.dataset.ic]}"/></svg>`})</script>
 <div id="pr"></div>
-<div id="hud"><button id="play">Play ad</button><div>Space: replay · F: fullscreen · 24.6s · 16:9</div></div>
+<div id="hud"><button id="play">Play ad</button><label id="pick">Pilih video demo<input id="pickv" type="file" accept="video/*" hidden></label><div>Space: replay · F: fullscreen · 24.6s · 16:9</div></div>
 <script>
 const st=document.getElementById('stage'),$=id=>document.getElementById(id),ph=$('ph'),gl=document.querySelector('.gl'),Q=s=>[...document.querySelectorAll(s)];
 /* ---------- spring (M3 expressive: damping/stiffness) → linear() easing ---------- */
@@ -274,10 +164,10 @@ function fitText(){Q('[data-for]:not([data-for="1"])').forEach(r=>{r.style.trans
  if(k<1){r.style.transformOrigin=fs?'0 50%':'50% 50%';r.style.transform='scale('+k.toFixed(3)+')'}})}
 /* ---------- phone screens ---------- */
 const S=Q('.sc');
-const vd=document.getElementById('demo');vd.addEventListener('loadeddata',()=>vd.classList.add('ok'));vd.addEventListener('error',()=>vd.classList.remove('ok'));
+
+const vd=document.getElementById('demo');vd.addEventListener('loadeddata',()=>vd.classList.add('ok'));vd.addEventListener('error',()=>vd.classList.remove('ok'));document.getElementById('pickv').addEventListener('change',e=>{const f=e.target.files[0];if(f){vd.src=URL.createObjectURL(f);vd.load()}});
 function vplay(){try{vd.currentTime=0;const q=vd.play();q&&q.catch(()=>{})}catch(e){}}
-function screen(i){S.forEach((s,j)=>{if(j===i){s.style.zIndex=2;s.classList.add('on');an(s,[{opacity:0,transform:'translateX(9%) scale(1.04)'},{opacity:1,transform:'none'}],{duration:SPS.T*1000,easing:SPS.css})}
- else if(s.classList.contains('on')){s.style.zIndex=1;an(s,[{opacity:1,transform:'none'},{opacity:1,offset:.6},{opacity:0,transform:'translateX(-9%) scale(.97)'}],{duration:600,easing:'cubic-bezier(.3,0,.8,.15)'});setTimeout(()=>s.classList.remove('on'),700)}})}
+function screen(i){}
 /* ---------- camera rig: anchor titik layar f → posisi stage p, semua param pakai spring fisik ---------- */
 /* [px,py, fx,fy, scale, rotY,rotX,rotZ]  — fokus zoom selalu atas / bawah, tidak pernah tengah */
 const CAM={pre:[1420,1500,314,0,1.3,-16,6,14],
@@ -297,9 +187,9 @@ const L=v=>Math.max(-8,Math.min(8,v));function draw(t){const[x,y,fx,fy,s,ry,rx,r
 /* ---------- timeline ---------- */
 const DUR=24.6,CUES=[[0,()=>go(1)],[1.9,()=>go(2)],
  [4.3,()=>{screen(0);vplay()}],[4.4,()=>cam('c3a')],[4.6,()=>go(3)],[6.6,()=>cam('c3b')],
- [8.45,()=>cam('c4a')],[8.6,()=>go(4)],[8.85,()=>screen(1)],[10.3,()=>cam('c4b')],
- [12.45,()=>cam('c5a')],[12.6,()=>go(5)],[12.85,()=>screen(2)],[14.3,()=>cam('c5b')],
- [16.45,()=>cam('c6a')],[16.6,()=>go(6)],[16.85,()=>screen(3)],[18.3,()=>cam('c6b')],
+ [8.45,()=>cam('c4a')],[8.6,()=>go(4)],[10.3,()=>cam('c4b')],
+ [12.45,()=>cam('c5a')],[12.6,()=>go(5)],[14.3,()=>cam('c5b')],
+ [16.45,()=>cam('c6a')],[16.6,()=>go(6)],[18.3,()=>cam('c6b')],
  [20.2,()=>cam('out')],[20.75,()=>go(7)]];
 let raf,t0,ci,fr,sum;
 function fit(){st.style.transform='scale('+Math.min(innerWidth/1920,innerHeight/1080)+')'}addEventListener('resize',fit);fit();
