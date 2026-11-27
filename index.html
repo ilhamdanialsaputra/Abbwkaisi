@@ -52,7 +52,7 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
 #scr{position:relative;width:600px;height:1333px;border-radius:82px;overflow:hidden;background:#EDE3FF}
 #scr:before{content:"";position:absolute;top:28px;left:50%;margin-left:-16px;width:32px;height:32px;border-radius:50%;background:var(--plum);z-index:9}
 .gl{position:absolute;inset:0;z-index:8;pointer-events:none;will-change:transform;background:linear-gradient(105deg,#fff0 36%,#fff5 50%,#fff0 64%)}
-#demo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:0;transition:opacity .6s ease;background:#000}#demo.ok{opacity:1}
+.dv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:0;transition:opacity .6s ease;background:#000}.dv.ok.on{opacity:1}
 .sc{position:absolute;inset:0;opacity:0;background:var(--c)}.sc.on{opacity:1}
 .sc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .phd{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;font:500 28px/1.4 var(--ff);color:var(--plum)}
@@ -63,8 +63,8 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
 #play:hover{border-radius:50px;scale:1.05}
 #pr{position:fixed;left:0;bottom:0;height:4px;width:100%;background:#FFC21A;transform:scaleX(0);transform-origin:0 50%;z-index:8}
 
-#demo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:0;transition:opacity .6s ease;background:#000}#demo.ok{opacity:1}
-.ph0{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:500 30px/1.5 var(--ff);color:#7d5fd0;padding:60px}.ph0 b{font-weight:800}#demo.ok~.ph0{display:none}
+.dv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:5;opacity:0;transition:opacity .6s ease;background:#000}.dv.ok.on{opacity:1}
+.ph0{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:500 30px/1.5 var(--ff);color:#7d5fd0;padding:60px}.ph0 b{font-weight:800}.dv.ok~.ph0{display:none}
 #pick{cursor:pointer;padding:10px 20px;border-radius:999px;background:#ffffff26;font-size:15px}
 </style></head>
 <body>
@@ -89,7 +89,7 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
  <div class="fs R" data-for="6"><h1 class="k" data-w>Drag it.<br>Drop ^it.^</h1><p>Move anything, anywhere, with just your thumb.</p>
   <div class="ch"><span class="chip" style="--r:-3deg">Any block</span><span class="chip" style="--r:2deg">Thumb-friendly</span><span class="chip" style="--r:-2deg">Intuitive</span></div></div>
 
- <div id="cam"><div id="ph"><div class="fr"><div id="scr"><video id="demo" src="demo.mp4" muted loop playsinline preload="auto"></video><div class="ph0">Taruh <b>demo.mp4</b><br>di folder yang sama,<br>atau pilih video di layar awal</div><div class="gl"></div>
+ <div id="cam"><div id="ph"><div class="fr"><div id="scr"><video class="dv" src="demo1.mp4" muted loop playsinline preload="auto"></video><video class="dv" src="demo2.mp4" muted loop playsinline preload="auto"></video><video class="dv" src="demo3.mp4" muted loop playsinline preload="auto"></video><video class="dv" src="demo4.mp4" muted loop playsinline preload="auto"></video><div class="ph0">Taruh <b>demo1.mp4</b> s/d <b>demo4.mp4</b><br>di folder yang sama,<br>atau pilih 4 video di layar awal</div><div class="gl"></div>
  </div></div></div></div>
 
  <div id="f" data-for="7"><div class="lg" style="--z:320px"><img src="assets/logo.png" alt="Dinduy" onerror="this.remove()" onload="this.nextElementSibling.remove()"><svg class="fb" viewBox="-100 -100 200 200"></svg></div>
@@ -98,7 +98,7 @@ html,body{-webkit-text-size-adjust:none;text-size-adjust:none;height:100%;margin
   <div class="pl"><span>On-device</span><span>No trackers</span><span>Open source</span><span>Android</span></div></div>
 </div>
 <div id="pr"></div>
-<div id="hud"><button id="play">Play ad</button><label id="pick">Pilih video demo<input id="pickv" type="file" accept="video/*" hidden></label><div>Space: replay · F: fullscreen · 24.6s · 16:9</div></div>
+<div id="hud"><button id="play">Play ad</button><label id="pick">Pilih 4 video demo (urut nama)<input id="pickv" type="file" accept="video/*" multiple hidden></label><div>Space: replay · F: fullscreen · 24.6s · 16:9</div></div>
 <script>
 const st=document.getElementById('stage'),$=id=>document.getElementById(id),ph=$('ph'),gl=document.querySelector('.gl'),Q=s=>[...document.querySelectorAll(s)];
 /* ---------- spring (M3 expressive: damping/stiffness) → linear() easing ---------- */
@@ -165,8 +165,12 @@ function fitText(){Q('[data-for]:not([data-for="1"])').forEach(r=>{r.style.trans
 /* ---------- phone screens ---------- */
 const S=Q('.sc');
 
-const vd=document.getElementById('demo');vd.addEventListener('loadeddata',()=>vd.classList.add('ok'));vd.addEventListener('error',()=>vd.classList.remove('ok'));document.getElementById('pickv').addEventListener('change',e=>{const f=e.target.files[0];if(f){vd.src=URL.createObjectURL(f);vd.load()}});
-function vplay(){try{vd.currentTime=0;const q=vd.play();q&&q.catch(()=>{})}catch(e){}}
+const VD=Q('.dv');VD.forEach(v=>{v.addEventListener('loadeddata',()=>v.classList.add('ok'));v.addEventListener('error',()=>v.classList.remove('ok'))});
+document.getElementById('pickv').addEventListener('change',e=>{[...e.target.files].sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true})).slice(0,4).forEach((f,i)=>{VD[i].src=URL.createObjectURL(f);VD[i].load()})});
+/* adegan i (0-3): video i fade-in di atas video sebelumnya; kalau video-nya tidak ada, video sebelumnya lanjut loop */
+function vplay(i){const v=VD[i];if(!v||!v.classList.contains('ok'))return;
+ VD.forEach(o=>{if(o!==v&&o.classList.contains('on'))setTimeout(()=>{o.classList.remove('on');o.pause()},700)});
+ v.classList.add('on');try{v.currentTime=0;const q=v.play();q&&q.catch(()=>{})}catch(e){}}
 function screen(i){}
 /* ---------- camera rig: anchor titik layar f → posisi stage p, semua param pakai spring fisik ---------- */
 /* [px,py, fx,fy, scale, rotY,rotX,rotZ]  — fokus zoom selalu atas / bawah, tidak pernah tengah */
@@ -186,14 +190,14 @@ const L=v=>Math.max(-8,Math.min(8,v));function draw(t){const[x,y,fx,fy,s,ry,rx,r
  ph.style.transform=`translate3d(${x.toFixed(2)}px,${(y+sw*10+sb*4).toFixed(2)}px,0) rotateX(${(rx+sc*1.2+L(cv[1]*.004)).toFixed(2)}deg) rotateY(${(ry+sw*2.2-L(cv[0]*.006)).toFixed(2)}deg) rotateZ(${(rz+sb*.7-L(cv[0]*.003)).toFixed(2)}deg) scale(${(s*(1+sb*.006)).toFixed(4)}) translate(${-fx.toFixed(2)}px,${-fy.toFixed(2)}px)`}
 /* ---------- timeline ---------- */
 const DUR=24.6,CUES=[[0,()=>go(1)],[1.9,()=>go(2)],
- [4.3,()=>{screen(0);vplay()}],[4.4,()=>cam('c3a')],[4.6,()=>go(3)],[6.6,()=>cam('c3b')],
- [8.45,()=>cam('c4a')],[8.6,()=>go(4)],[10.3,()=>cam('c4b')],
- [12.45,()=>cam('c5a')],[12.6,()=>go(5)],[14.3,()=>cam('c5b')],
- [16.45,()=>cam('c6a')],[16.6,()=>go(6)],[18.3,()=>cam('c6b')],
+ [4.3,()=>vplay(0)],[4.4,()=>cam('c3a')],[4.6,()=>go(3)],[6.6,()=>cam('c3b')],
+ [8.45,()=>{cam('c4a');vplay(1)}],[8.6,()=>go(4)],[10.3,()=>cam('c4b')],
+ [12.45,()=>{cam('c5a');vplay(2)}],[12.6,()=>go(5)],[14.3,()=>cam('c5b')],
+ [16.45,()=>{cam('c6a');vplay(3)}],[16.6,()=>go(6)],[18.3,()=>cam('c6b')],
  [20.2,()=>cam('out')],[20.75,()=>go(7)]];
 let raf,t0,ci,fr,sum;
 function fit(){st.style.transform='scale('+Math.min(innerWidth/1920,innerHeight/1080)+')'}addEventListener('resize',fit);fit();
-function reset(){try{vd.pause();vd.currentTime=0}catch(e){}cancelAnimationFrame(raf);AN.forEach(a=>a.cancel());AN=[];cur=0;W=null;wp.style.visibility='hidden';pose(1);BS.forEach(b=>{b.c=b.t.slice();b.v=[0,0,0,0,0]});blobStep(0,0);
+function reset(){try{VD.forEach(v=>{v.pause();v.currentTime=0;v.classList.remove('on')})}catch(e){}cancelAnimationFrame(raf);AN.forEach(a=>a.cancel());AN=[];cur=0;W=null;wp.style.visibility='hidden';pose(1);BS.forEach(b=>{b.c=b.t.slice();b.v=[0,0,0,0,0]});blobStep(0,0);
  st.style.background=BG[1];st.dataset.s=1;Q('[data-for]').forEach(e=>e.classList.remove('on'));S.forEach(s=>s.classList.remove('on'));
  st.classList.add('nt');cs=CAM.pre.slice();ct=CAM.pre.slice();cv.fill(0);ex=0;draw(0);void st.offsetWidth;st.classList.remove('nt')}
 function play(){fitText();reset();$('hud').classList.add('h');t0=lastN=performance.now();ci=0;fr=0;sum=0;
